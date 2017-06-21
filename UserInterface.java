@@ -218,5 +218,37 @@ public class UserInterface {
         System.out.println(result);
     }
 
+    /**
+     * Method to be called for removing client.
+     * Prompts the user for the appropriate values and
+     * uses the appropriate Theater method for removing client.
+     *
+     */
+    public void removeClient() {
+        int result;
+        do {
+            String clientID = getToken("Enter client id");
+            result = theater.removeClient(clientID);
+            switch(result){
+                case Theater.CLIENT_NOT_FOUND:
+                    System.out.println("No such client in Theater");
+                    break;
+                case Theater.ACTIVE_SHOW:
+                    System.out.println("Client has an active show(s)");
+                    break;
+                case Theater.OPERATION_FAILED:
+                    System.out.println("Client could not be removed");
+                    break;
+                case Theater.OPERATION_COMPLETED:
+                    System.out.println("Client has been removed");
+                    break;
+                default:
+                    System.out.println("An error has occurred");
+            }
+            if (!yesOrNo("Remove more clients?")) {
+                break;
+            }
+        } while (true);
+    }
 
 }
