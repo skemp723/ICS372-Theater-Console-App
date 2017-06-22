@@ -1,7 +1,4 @@
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.Serializable;
+import java.io.*;
 import java.util.Iterator;
 
 /**
@@ -52,7 +49,7 @@ public class Theater implements Serializable{
     public static Theater retrieve()
     {
         try {
-            FileInputStream file = new FileInputStream("LibraryData");
+            FileInputStream file = new FileInputStream("TheaterData");
             ObjectInputStream input = new ObjectInputStream(file);
             input.readObject();
             ClientIdServer.retrieve(input);
@@ -164,4 +161,17 @@ public class Theater implements Serializable{
         return null;
     }
 
+    public static boolean save() {
+        try{
+            FileOutputStream file = new FileOutputStream("TheaterData");
+            ObjectOutputStream output = new ObjectOutputStream(file);
+            output.writeObject(theater);
+            output.writeObject(ClientIdServer.instance());
+            return true;
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
 }
