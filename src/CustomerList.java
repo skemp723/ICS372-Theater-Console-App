@@ -5,37 +5,37 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
- * Created by z077391 on 6/20/2017.
+ * Created by teche on 6/21/2017.
  */
-public class ClientList implements Serializable{
+public class CustomerList implements Serializable{
     private static final long serialVersionUIS =1L;
-    private List clients =new LinkedList();
-    private static ClientList clientList;
+    private List customers = new LinkedList();
+    private static CustomerList customerList;
     /**
      * Private constructor for singleton pattern
      *
      */
-    private ClientList() {
+    private CustomerList() {
     }
-    public static ClientList instance() {
-        if (clientList == null) {
-            return (clientList = new ClientList());
+    public static CustomerList instance() {
+        if (customerList == null) {
+            return (customerList = new CustomerList());
         } else {
-            return clientList;
+            return customerList;
         }
     }
 
     /**
      * Checks whether a member with a given member id exists.
-     * @param memberId the id of the member
+     * @param customerId the id of the member
      * @return true iff member exists
      *
      */
-    public Client search(String memberId) {
-        for (Iterator iterator = clients.iterator(); iterator.hasNext(); ) {
-            Client client = (Client) iterator.next();
-            if (client.getId().equals(memberId)) {
-                return client;
+    public Customer search(String customerId) {
+        for (Iterator iterator = customers.iterator(); iterator.hasNext(); ) {
+            Customer customer = (Customer) iterator.next();
+            if (customer.getId().equals(customerId)) {
+                return customer;
             }
         }
         return null;
@@ -43,27 +43,27 @@ public class ClientList implements Serializable{
 
     /**
      * Inserts a member into the collection
-     * @param client the member to be inserted
+     * @param customer the member to be inserted
      * @return true iff the member could be inserted. Currently always true
      */
-    public boolean insertClient(Client client) {
-        clients.add(client);
+    public boolean insertCustomer(Customer customer) {
+        customers.add(customer);
         return true;
     }
 
     /**
-     * Removes a client from the list
-     * @param clientId client id
-     * @return true iff client could be removed
+     * Removes a customer from the catalog
+     * @param customerId customer id
+     * @return true iff customer could be removed
      * */
-    public boolean removeClient(String clientId)
+    public boolean removeCustomer(String customerId)
     {
-        Client client = search(clientId);
-        if(client == null)
+        Customer customer = search(customerId);
+        if(customer == null)
         {
             return false;
         }else{
-            return clients.remove(client);
+            return customers.remove(customer);
         }
     }
 
@@ -74,7 +74,7 @@ public class ClientList implements Serializable{
     private void writeObject(java.io.ObjectOutputStream output) {
         try {
             output.defaultWriteObject();
-            output.writeObject(clientList);
+            output.writeObject(customerList);
         } catch(IOException ioe) {
             ioe.printStackTrace();
         }
@@ -86,12 +86,12 @@ public class ClientList implements Serializable{
      */
     private void readObject(java.io.ObjectInputStream input) {
         try {
-            if (clientList != null) {
+            if (customerList != null) {
                 return;
             } else {
                 input.defaultReadObject();
-                if (clientList == null) {
-                    clientList = (ClientList) input.readObject();
+                if (customerList == null) {
+                    customerList = (CustomerList) input.readObject();
                 } else {
                     input.readObject();
                 }
@@ -108,15 +108,16 @@ public class ClientList implements Serializable{
      */
     @Override
     public String toString() {
-        return clients.toString();
+        return customers.toString();
     }
 
     /**
-     * Returns and Iterator of the exsisting clients
+     * Returns and Iterator of the exsisting customers
      * @return iterator of the collection
      * */
-    public Iterator getClients()
+    public Iterator getCustomers()
     {
-        return clients.iterator();
+        return customers.iterator();
     }
+
 }

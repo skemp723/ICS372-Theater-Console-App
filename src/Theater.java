@@ -16,6 +16,8 @@ public class Theater implements Serializable{
     public static final int OPERATION_FAILED = 8;
 
     private ClientList clientList;
+    private CreditCardList creditCardList;
+    private CustomerList customerList;
     private static Theater theater;
     /**
      * Private for the singleton pattern
@@ -24,6 +26,8 @@ public class Theater implements Serializable{
     private Theater() {
 
         clientList = ClientList.instance();
+        customerList = CustomerList.instance();
+        creditCardList = CreditCardList.instance();
     }
 
     /**
@@ -38,21 +42,6 @@ public class Theater implements Serializable{
         } else {
             return theater;
         }
-    }
-
-    /**
-     * Organizes the operations for adding a client
-     * @param name client name
-     * @param address client address
-     * @param phone client phone
-     * @return the Client object created
-     */
-    public Client addClient(String name, String address, String phone) {
-        Client client = new Client(name, address, phone);
-        if (clientList.insertClient(client)) {
-            return (client);
-        }
-        return null;
     }
 
     /**
@@ -74,6 +63,22 @@ public class Theater implements Serializable{
             cnfe.printStackTrace();
             return null;
         }
+    }
+
+    /**
+     * Organizes the operations for adding a client
+     * @param name client name
+     * @param address client address
+     * @param phone client phone
+     * @return the Client object created
+     */
+    public Client addClient(String name, String address, String phone)
+    {
+        Client client = new Client(name, address, phone);
+        if (clientList.insertClient(client)) {
+            return (client);
+        }
+        return null;
     }
 
     /**
@@ -103,4 +108,28 @@ public class Theater implements Serializable{
     {
         return clientList.getClients();
     }
+
+    public Customer addCustomer(String name, String address, String phone, String creditCardNumber, String creditCardExp)
+    {
+        if(creditCardList.search(creditCardNumber)!=null){
+            return null;
+        }else{
+            CreditCard creditCard = addCreditCard(creditCardNumber,creditCardExp);
+            Customer customer = new Customer(name,address,phone,creditCard);
+            if (customerList.insertCustomer(customer)) {
+                return (customer);
+            }
+            return null;
+        }
+    }
+
+    private CreditCard addCreditCard(String creditCardNumber, String creditCardExp) {
+        CreditCard creditCard = new CreditCard(creditCardNumber,creditCardExp);
+        if(creditCardList.insertCreditCard(creditCard))
+        {
+            return (creditCard);
+        }
+        return null;
+    }
+
 }
