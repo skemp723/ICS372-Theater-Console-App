@@ -61,4 +61,9 @@ public class Client implements Serializable{
         }
         return false;
     }
+    public String toString()
+    {
+        String result = String.format("ClientID: %s , Name: %s , Address: %s , Phone Number: %s",this.id,this.name,this.address,this.phone);
+        return result;
+    }
 }
