@@ -14,6 +14,7 @@ public class Theater implements Serializable{
     public static final int ACTIVE_SHOW = 3;
     public static final int OPERATION_COMPLETED = 7;
     public static final int OPERATION_FAILED = 8;
+    public static final int CUSTOMER_NOT_FOUND = 5;
 
     private ClientList clientList;
     private CreditCardList creditCardList;
@@ -109,6 +110,17 @@ public class Theater implements Serializable{
         return clientList.getClients();
     }
 
+
+    /**
+     * Method called to retreive the iterator customer list
+     * @return a list iterator of the CustomerList
+     * */
+    public Iterator getCustomers()
+    {
+        return customerList.getCustomers();
+    }
+
+
     public Customer addCustomer(String name, String address, String phone, String creditCardNumber, String creditCardExp)
     {
         if(creditCardList.search(creditCardNumber)!=null){
@@ -121,6 +133,22 @@ public class Theater implements Serializable{
             }
             return null;
         }
+    }
+
+    /**
+     * Removes a specific customer
+     * @param customerId id of the book
+     * @return a code representing the outcome
+     */
+    public int removeCustomer(String customerId) {
+        Customer customer = customerList.search(customerId);
+        if (customer == null) {
+            return(CUSTOMER_NOT_FOUND);
+        }
+        if (customerList.removeCustomer(customerId)) {
+            return (OPERATION_COMPLETED);
+        }
+        return (OPERATION_FAILED);
     }
 
     private CreditCard addCreditCard(String creditCardNumber, String creditCardExp) {

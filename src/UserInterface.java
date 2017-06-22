@@ -47,13 +47,16 @@ public class UserInterface {
             switch(command)
             {
                 case ADD_CLIENT: addClient();
-                break;
+                    break;
                 case REMOVE_CLIENT: removeClient();
-                break;
+                    break;
                 case LIST_CLIENTS: getClients();
-                break;
+                    break;
                 case ADD_CUSTOMER: addCustomer();;
-                break;
+                    break;
+                case REMOVE_CUSTOMER: removeCustomer();
+                    break;
+                case LIST_CUSTOMERS: listCustomers();
             }
         }
     }
@@ -320,5 +323,56 @@ public class UserInterface {
         }
         System.out.println(result.toString());
     }
+
+    /**
+     * Method to be called for removing customer.
+     * Prompts the user for the appropriate values and
+     * uses the appropriate Theater method for removing customer.
+     *
+     */
+    public void removeCustomer()
+    {
+        int result;
+        do {
+            String customerID = getToken("Enter customer id");
+            result = theater.removeCustomer(customerID);
+            switch(result){
+                case Theater.CUSTOMER_NOT_FOUND:
+                    System.out.println("No such customer in Theater");
+                    break;
+                case Theater.OPERATION_FAILED:
+                    System.out.println("Customer could not be removed");
+                    break;
+                case Theater.OPERATION_COMPLETED:
+                    System.out.println("Customer has been removed");
+                    break;
+                default:
+                    System.out.println("An error has occurred");
+            }
+            if (!yesOrNo("Remove more customers?")) {
+                break;
+            }
+        } while (true);
+    }
+
+
+    /**
+     * Method called to diaplay all Clients
+     * */
+    public void listCustomers()
+    {
+        Iterator result = theater.getCustomers();
+        if(result ==null)
+        {
+            System.out.println("No customers available");
+        }else {
+            while(result.hasNext())
+            {
+                Customer customer = (Customer) result.next();
+                System.out.println(customer.toString());
+            }
+        }
+    }
+
 
 }
