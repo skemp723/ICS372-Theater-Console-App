@@ -13,7 +13,7 @@ public class Client implements Serializable{
     private String phone;
     private String id;
     private List<Show> shows = new LinkedList();
-    private static final String CLIENT_STRING = "C";
+    private static final String CLIENT_STRING = "CL";
 
     /**
      * Represents a single member
@@ -30,6 +30,9 @@ public class Client implements Serializable{
     }
 
 
+    /**
+     * Getter method for the id
+     * @return returns the clientId*/
     public String getId() {
         return id;
     }
@@ -42,6 +45,7 @@ public class Client implements Serializable{
     {
         shows.add(show);
     }
+
     /**
      * Checks whether there is a show scheduled after the current date
      * @return false iif there is a show
@@ -61,6 +65,11 @@ public class Client implements Serializable{
         }
         return false;
     }
+
+    /**
+     * Return string of the Client
+     * String contains id, name, address and phone number
+     * */
     public String toString()
     {
         String result = String.format("ClientID: %s , Name: %s , Address: %s , Phone Number: %s",this.id,this.name,this.address,this.phone);

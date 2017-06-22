@@ -52,6 +52,8 @@ public class UserInterface {
                 break;
                 case LIST_CLIENTS: getClients();
                 break;
+                case ADD_CUSTOMER: addCustomer();;
+                break;
             }
         }
     }
@@ -252,7 +254,8 @@ public class UserInterface {
      * uses the appropriate Theater method for removing client.
      *
      */
-    public void removeClient() {
+    public void removeClient()
+    {
         int result;
         do {
             String clientID = getToken("Enter client id");
@@ -295,6 +298,27 @@ public class UserInterface {
                 System.out.println(client.toString());
             }
         }
+    }
+
+    /**
+     * Method to be called for adding a customer.
+     * Prompts the user for the appropriate values and
+     * uses the appropriate Theater method for adding the customer.
+     *
+     */
+    public void addCustomer()
+    {
+        String name = getToken("Enter customer name");
+        String address = getToken("Enter address");
+        String phone = getToken("Enter phone");
+        String creditCardNumber  = getToken("Enter Credit Card number");
+        String creditCardExp = getToken("Enter Credit Card experatio date");
+        Customer result;
+        result = theater.addCustomer(name, address, phone,creditCardNumber,creditCardExp);
+        if (result == null) {
+            System.out.println("Could not add customer");
+        }
+        System.out.println(result.toString());
     }
 
 }
