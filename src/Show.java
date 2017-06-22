@@ -2,7 +2,6 @@ import java.io.Serializable;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.Date;
 
 /**
  * Created by teche on 6/21/2017.
@@ -13,17 +12,21 @@ public class Show implements Serializable{
     private String id;
     private Calendar date;
     private int period;
+    private static final long serialVersionUID = 1L;
+    private static final String SHOW_STRING = "SH";
+
     /**
      * Represents a single member
      * @param date date the show will start
      * @param title name of the show
      * @param period the number of weeks the show will run
      * */
-    public void Show(String title, Calendar date, int period)
+    public Show(String title, Calendar date, int period)
     {
         this.title = title;
         this.date = date;
         this.period = period;
+        id = SHOW_STRING + (ClientIdServer.instance()).getId();
     }
     /**
      *returns the end date of the show
@@ -76,5 +79,15 @@ public class Show implements Serializable{
         }else {
             this.period = period;
         }
+    }
+
+    @Override
+    public String toString() {
+        return "Show{" +
+                "title='" + title + '\'' +
+                ", id='" + id + '\'' +
+                ", date=" + date +
+                ", period=" + period +
+                '}';
     }
 }

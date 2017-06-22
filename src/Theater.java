@@ -101,6 +101,10 @@ public class Theater implements Serializable{
         return (OPERATION_FAILED);
     }
 
+    public Client getClient(String clientId) {
+        return(clientList.search(clientId));
+    }
+
     /**
      * Method called to retreive the iterator client list
      * @return a list iterator of the ClientList
