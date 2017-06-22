@@ -1,17 +1,18 @@
 import java.io.Serializable;
+import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 
 /**
  * Created by teche on 6/21/2017.
  */
-public class Customer implements Serializable{
+public class Customer implements Serializable, Iterable{
     private static final long serialVersionUID = 1L;
     private String name;
     private String address;
     private String phone;
     private String id;
-    private List<CreditCard> creditCards = new LinkedList();
+    private List<CreditCard> creditCards = new LinkedList<CreditCard>();
     private static final String CUSTOMER_STRING = "CU";
 
     /**
@@ -59,7 +60,30 @@ public class Customer implements Serializable{
 
     public String toString()
     {
-        String result = String.format("CustomerID: %s , Name: %s , Address: %s , Phone Number: %s",this.id,this.name,this.address,this.phone);
+        String result = String.format("CustomerID: %s , Name: %s , Address: %s , Phone Number: %s" +
+                " , creditCards: %s",this.id,this.name,this.address,this.phone,this.creditCards);
         return result;
+    }
+
+    public void customerAddCard(CreditCard c){
+        creditCards.add(c);
+    }
+
+    public void customerRemoveCard(CreditCard c){
+        creditCards.remove(c);
+
+    }
+    public int customerCCListSize(){
+        return creditCards.size();
+    }
+
+    /**
+     * Returns an iterator over elements of type {@code T}.
+     *
+     * @return an Iterator.
+     */
+    @Override
+    public Iterator iterator() {
+        return creditCards.listIterator();
     }
 }
