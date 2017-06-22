@@ -55,18 +55,28 @@ public class UserInterface {
                     break;
                 case LIST_CLIENTS: getClients();
                     break;
-                case ADD_CUSTOMER: addCustomer();;
+                case ADD_CUSTOMER: addCustomer();
                     break;
                 case REMOVE_CUSTOMER: removeCustomer();
                     break;
                 case LIST_CUSTOMERS: listCustomers();
                     break;
+                case ADD_CARD: addCard();
+                    break;
+                case REMOVE_CARD: removeCard();
+                    break;
                 case ADD_SHOW: addShow();
                     break;
                 case LIST_SHOWS: listShows();
+                    break;
+                case STORE_DATA: storeData();
+                    break;
+                case HELP: help();
+                    break;
             }
         }
     }
+
 
     /**
      * Made private for singleton pattern.
@@ -107,10 +117,10 @@ public class UserInterface {
         try {
             Theater tempLibrary = Theater.retrieve();
             if (tempLibrary != null) {
-                System.out.println(" The library has been successfully retrieved from the file LibraryData \n" );
+                System.out.println(" The theater has been successfully retrieved from the file TheaterData \n" );
                 theater = tempLibrary;
             } else {
-                System.out.println("File doesnt exist; creating new library" );
+                System.out.println("File doesn't exist; creating new Theater" );
                 theater = Theater.instance();
             }
         } catch(Exception cnfe) {
@@ -222,8 +232,8 @@ public class UserInterface {
      */
     public void help()
     {
-        System.out.println("Enter a number between 0 and 12 as explained below:");
-        System.out.println(EXIT + " to Exit\n");
+        System.out.println("Enter a number between 0 and 13 as explained below:");
+        System.out.println(EXIT + " to Exit");
         System.out.println(ADD_CLIENT + " to add client(s)");
         System.out.println(REMOVE_CLIENT + " to  remove client(s)");
         System.out.println(LIST_CLIENTS + " to  print clients");
@@ -322,13 +332,13 @@ public class UserInterface {
         String address = getToken("Enter address");
         String phone = getToken("Enter phone");
         String creditCardNumber  = getToken("Enter Credit Card number");
-        String creditCardExp = getToken("Enter Credit Card experatio date");
+        String creditCardExp = getToken("Enter Credit Card expiration date");
         Customer result;
         result = theater.addCustomer(name, address, phone,creditCardNumber,creditCardExp);
         if (result == null) {
             System.out.println("Could not add customer");
         }
-        System.out.println(result.toString());
+        System.out.println(result);
     }
 
     /**
@@ -388,7 +398,7 @@ public class UserInterface {
      *
      */
     public void addShow() {
-        String showTitle = getToken("Enter show/paly title");
+        String showTitle = getToken("Enter show/play title");
         String clientId = getToken("Enter client id");
         String showDt  = getToken("Enter show start date in YYYY-MM-DD format");
         Integer showPeriod = Integer.parseInt(getToken("Enter show period in number of weeks"));
@@ -437,6 +447,42 @@ public class UserInterface {
                 System.out.println(show.toString());
             }
         }
+    }
+
+    public void addCard(){
+        String customerId = getToken("Enter customer id");
+        Customer customer;
+        if(CustomerList.instance().search(customerId) != null){
+            customer = CustomerList.instance().search(customerId);
+            String creditCardNumber = getToken("Enter Credit Card Number");
+            String creditCardExpirationDate = getToken("Enter Credit Card Expiration Date");
+            CreditCard creditCard = new CreditCard(creditCardNumber,creditCardExpirationDate);
+            customer.customerAddCard(creditCard);
+            System.out.println(customer);
+        }
+        else{
+            System.out.println("Customer does not exist");
+        }
+
+    }
+    public void removeCard(){
+        String customerId = getToken("Enter customer id");
+        Customer customer;
+        if(CustomerList.instance().search(customerId) != null){
+            customer = CustomerList.instance().search(customerId);
+            if(customer.customerCCListSize() > 1){
+            String ccNumToRemove = getToken("Enter the credit card number for removal");
+            customer.customerRemoveCard(CreditCardList.instance().search(ccNumToRemove));
+            System.out.println(customer);
+            }
+            else
+                System.out.println("There must be at least 1 Credit Card on file");
+        }
+
+    }
+    public void storeData(){
+        theater.save();
+
     }
 
 }
