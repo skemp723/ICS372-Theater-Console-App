@@ -1,54 +1,64 @@
-import javax.security.auth.login.AccountException;
+import java.io.Serializable;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.*;
 
 /**
- * Created by teche on 6/14/2017.
+ * Created by z077391 on 6/20/2017.
  */
-public class Client {
-
-    private int id;
+public class Client implements Serializable{
+    private static final long serialVersionUID = 1L;
     private String name;
     private String address;
-    private int phoneNumber;
-    private double balance;
+    private String phone;
+    private String id;
+    private List<Show> shows = new LinkedList();
+    private static final String CLIENT_STRING = "C";
 
-    public void Client(String name, String address, int phoneNumber)
+    /**
+     * Represents a single member
+     * @param name name of the member
+     * @param address address of the member
+     * @param phone phone number of the member
+     */
+    public  Client (String name, String address, String phone)
     {
         this.name = name;
         this.address = address;
-        this.phoneNumber = phoneNumber;
-        setBalance(0);
-
+        this.phone = phone;
+        id = CLIENT_STRING + (ClientIdServer.instance()).getId();
     }
 
-    public String getName() {
-        return name;
+
+    public String getId() {
+        return id;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    /**
+     * Adds show to the currnet list
+     * @param show the new show to be added
+     * */
+    public void addShow(Show show)
+    {
+        shows.add(show);
     }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
-    public int getPhoneNumber() {
-        return phoneNumber;
-    }
-
-    public void setPhoneNumber(int phoneNumber) {
-        this.phoneNumber = phoneNumber;
-    }
-
-    public double getBalance() {
-        return balance;
-    }
-
-    public void setBalance(double balance) {
-        this.balance = balance;
+    /**
+     * Checks whether there is a show scheduled after the current date
+     * @return false iif there is a show
+     * */
+    public boolean hasShow() {
+        ListIterator iterator = shows.listIterator();
+        int i = 0;
+        DateFormat dateFormat = SimpleDateFormat.getDateInstance(DateFormat.SHORT);
+        Calendar date = Calendar.getInstance();
+        if(iterator.hasNext())
+        {
+            i++;
+            if(shows.get(i).getEndDate().compareTo(dateFormat.format(date)) >0 )
+            {
+                return true;
+            }
+        }
+        return false;
     }
 }

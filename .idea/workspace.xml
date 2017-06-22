@@ -2,12 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6ec06979-7bf2-4b8d-b431-04f88741939d" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/kotlinc.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Account.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Application.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Client.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Customer.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Theater.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Show.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Client.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ClientIdServer.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ClientList.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Theater.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/UserInterface.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Account.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Application.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Customer.java" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Client.java" afterPath="$PROJECT_DIR$/src/Client.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Theater.java" afterPath="$PROJECT_DIR$/src/Theater.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -19,25 +25,77 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="Application.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Application.java">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
+      <file leaf-file-name="Client.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Client.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="567">
+              <caret line="51" column="8" lean-forward="false" selection-start-line="51" selection-start-column="8" selection-end-line="51" selection-end-column="83" />
+              <folding>
+                <element signature="docComment;class#Client#0" expanded="false" />
+                <element signature="method#Client#0;class#Client#0" expanded="false" />
+                <element signature="docComment;method#addShow#0;class#Client#0" expanded="false" />
+                <element signature="e#1061#1062#0" expanded="true" />
+                <element signature="e#1092#1093#0" expanded="true" />
+                <element signature="docComment;method#hasShow#0;class#Client#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Client.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Client.java">
+      <file leaf-file-name="Show.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Show.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="189">
+              <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+              <folding>
+                <element signature="docComment;class#Show#0" expanded="false" />
+                <element signature="docComment;method#Show#0;class#Show#0" expanded="false" />
+                <element signature="method#Show#0;class#Show#0" expanded="false" />
+                <element signature="docComment;method#getEndDate#0;class#Show#0" expanded="false" />
+                <element signature="method#getEndDate#0;class#Show#0" expanded="false" />
+                <element signature="docComment;method#getTitle#0;class#Show#0" expanded="false" />
+                <element signature="docComment;method#getId#0;class#Show#0" expanded="false" />
+                <element signature="docComment;method#getDate#0;class#Show#0" expanded="false" />
+                <element signature="docComment;method#getPeriod#0;class#Show#0" expanded="false" />
+                <element signature="docComment;method#setPeriod#0;class#Show#0" expanded="false" />
+                <element signature="method#setPeriod#0;class#Show#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ClientList.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ClientList.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="420">
+              <caret line="56" column="4" lean-forward="false" selection-start-line="56" selection-start-column="4" selection-end-line="56" selection-end-column="4" />
+              <folding>
+                <element signature="docComment;class#ClientList#0" expanded="false" />
+                <element signature="docComment;method#ClientList#0;class#ClientList#0" expanded="false" />
+                <element signature="method#ClientList#0;class#ClientList#0" expanded="false" />
+                <element signature="method#instance#0;class#ClientList#0" expanded="false" />
+                <element signature="docComment;method#search#0;class#ClientList#0" expanded="false" />
+                <element signature="method#search#0;class#ClientList#0" expanded="false" />
+                <element signature="docComment;method#insertMember#0;class#ClientList#0" expanded="false" />
+                <element signature="method#insertMember#0;class#ClientList#0" expanded="false" />
+                <element signature="method#removeClient#0;class#ClientList#0" expanded="false" />
+                <element signature="docComment;method#writeObject#0;class#ClientList#0" expanded="false" />
+                <element signature="method#writeObject#0;class#ClientList#0" expanded="false" />
+                <element signature="docComment;method#readObject#0;class#ClientList#0" expanded="false" />
+                <element signature="method#readObject#0;class#ClientList#0" expanded="false" />
+                <element signature="docComment;method#toString#0;class#ClientList#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ClientIdServer.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ClientIdServer.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="105">
-              <caret line="5" column="20" lean-forward="false" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
-              <folding>
-                <element signature="method#Client#0;class#Client#0" expanded="false" />
-              </folding>
+              <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -45,31 +103,43 @@
       <file leaf-file-name="Theater.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Theater.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="63">
-              <caret line="3" column="20" lean-forward="false" selection-start-line="3" selection-start-column="20" selection-end-line="3" selection-end-column="20" />
+            <state relative-caret-position="189">
+              <caret line="12" column="39" lean-forward="false" selection-start-line="12" selection-start-column="39" selection-end-line="12" selection-end-column="39" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Customer.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Customer.java">
+      <file leaf-file-name="UserInterface.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/UserInterface.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="588">
-              <caret line="50" column="5" lean-forward="false" selection-start-line="50" selection-start-column="5" selection-end-line="50" selection-end-column="5" />
+            <state relative-caret-position="673">
+              <caret line="226" column="31" lean-forward="false" selection-start-line="226" selection-start-column="31" selection-end-line="226" selection-end-column="31" />
               <folding>
-                <element signature="method#Client#0;class#Customer#0" expanded="false" />
+                <element signature="docComment;class#UserInterface#0" expanded="false" />
+                <element signature="docComment;method#UserInterface#0;class#UserInterface#0" expanded="false" />
+                <element signature="method#UserInterface#0;class#UserInterface#0" expanded="false" />
+                <element signature="docComment;method#instance#0;class#UserInterface#0" expanded="false" />
+                <element signature="method#instance#0;class#UserInterface#0" expanded="false" />
+                <element signature="docComment;method#retrieve#0;class#UserInterface#0" expanded="false" />
+                <element signature="method#retrieve#0;class#UserInterface#0" expanded="false" />
+                <element signature="docComment;method#getNumber#0;class#UserInterface#0" expanded="false" />
+                <element signature="method#getNumber#0;class#UserInterface#0" expanded="false" />
+                <element signature="docComment;method#getDate#0;class#UserInterface#0" expanded="false" />
+                <element signature="method#getDate#0;class#UserInterface#0" expanded="false" />
+                <element signature="docComment;method#getCommand#0;class#UserInterface#0" expanded="false" />
+                <element signature="method#getCommand#0;class#UserInterface#0" expanded="false" />
+                <element signature="docComment;method#yesOrNo#0;class#UserInterface#0" expanded="false" />
+                <element signature="method#yesOrNo#0;class#UserInterface#0" expanded="false" />
+                <element signature="docComment;method#getToken#0;class#UserInterface#0" expanded="false" />
+                <element signature="method#getToken#0;class#UserInterface#0" expanded="false" />
+                <element signature="docComment;method#help#0;class#UserInterface#0" expanded="false" />
+                <element signature="method#help#0;class#UserInterface#0" expanded="false" />
+                <element signature="docComment;method#addClient#0;class#UserInterface#0" expanded="false" />
+                <element signature="method#addClient#0;class#UserInterface#0" expanded="false" />
+                <element signature="docComment;method#removeClient#0;class#UserInterface#0" expanded="false" />
+                <element signature="method#removeClient#0;class#UserInterface#0" expanded="false" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Account.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Account.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="63">
-              <caret line="3" column="24" lean-forward="false" selection-start-line="3" selection-start-column="24" selection-end-line="3" selection-end-column="24" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -79,8 +149,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -98,7 +168,10 @@
         <option value="$PROJECT_DIR$/src/Application.java" />
         <option value="$PROJECT_DIR$/src/Person.java" />
         <option value="$PROJECT_DIR$/src/Customer.java" />
+        <option value="$PROJECT_DIR$/src/ClientList.java" />
         <option value="$PROJECT_DIR$/src/Client.java" />
+        <option value="$PROJECT_DIR$/src/Show.java" />
+        <option value="$PROJECT_DIR$/src/Theater.java" />
       </list>
     </option>
   </component>
@@ -124,8 +197,8 @@
     </navigator>
     <panes>
       <pane id="Scratches" />
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -160,6 +233,11 @@
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -396,51 +474,45 @@
     <frame x="-9" y="-9" width="1938" height="1060" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Person.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="5" column="4" lean-forward="false" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Application.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
@@ -459,11 +531,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Customer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="588">
-          <caret line="50" column="5" lean-forward="false" selection-start-line="50" selection-start-column="5" selection-end-line="50" selection-end-column="5" />
-          <folding>
-            <element signature="method#Client#0;class#Customer#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="294">
+          <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -477,10 +547,146 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Client.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="5" column="20" lean-forward="false" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
+        <state relative-caret-position="84">
+          <caret line="5" column="3" lean-forward="true" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="3" />
           <folding>
+            <element signature="docComment;class#Client#0" expanded="false" />
             <element signature="method#Client#0;class#Client#0" expanded="false" />
+            <element signature="docComment;method#addShow#0;class#Client#0" expanded="false" />
+            <element signature="e#1061#1062#0" expanded="true" />
+            <element signature="e#1092#1093#0" expanded="true" />
+            <element signature="docComment;method#hasShow#0;class#Client#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Person.java" />
+    <entry file="file://$PROJECT_DIR$/src/Application.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Customer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="52" column="0" lean-forward="false" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Account.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="63">
+          <caret line="3" column="24" lean-forward="false" selection-start-line="3" selection-start-column="24" selection-end-line="3" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ClientIdServer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ClientList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="56" column="4" lean-forward="false" selection-start-line="56" selection-start-column="4" selection-end-line="56" selection-end-column="4" />
+          <folding>
+            <element signature="docComment;class#ClientList#0" expanded="false" />
+            <element signature="docComment;method#ClientList#0;class#ClientList#0" expanded="false" />
+            <element signature="method#ClientList#0;class#ClientList#0" expanded="false" />
+            <element signature="method#instance#0;class#ClientList#0" expanded="false" />
+            <element signature="docComment;method#search#0;class#ClientList#0" expanded="false" />
+            <element signature="method#search#0;class#ClientList#0" expanded="false" />
+            <element signature="docComment;method#insertMember#0;class#ClientList#0" expanded="false" />
+            <element signature="method#insertMember#0;class#ClientList#0" expanded="false" />
+            <element signature="method#removeClient#0;class#ClientList#0" expanded="false" />
+            <element signature="docComment;method#writeObject#0;class#ClientList#0" expanded="false" />
+            <element signature="method#writeObject#0;class#ClientList#0" expanded="false" />
+            <element signature="docComment;method#readObject#0;class#ClientList#0" expanded="false" />
+            <element signature="method#readObject#0;class#ClientList#0" expanded="false" />
+            <element signature="docComment;method#toString#0;class#ClientList#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Client.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="567">
+          <caret line="51" column="8" lean-forward="false" selection-start-line="51" selection-start-column="8" selection-end-line="51" selection-end-column="83" />
+          <folding>
+            <element signature="docComment;class#Client#0" expanded="false" />
+            <element signature="method#Client#0;class#Client#0" expanded="false" />
+            <element signature="docComment;method#addShow#0;class#Client#0" expanded="false" />
+            <element signature="e#1061#1062#0" expanded="true" />
+            <element signature="e#1092#1093#0" expanded="true" />
+            <element signature="docComment;method#hasShow#0;class#Client#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Show.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding>
+            <element signature="docComment;class#Show#0" expanded="false" />
+            <element signature="docComment;method#Show#0;class#Show#0" expanded="false" />
+            <element signature="method#Show#0;class#Show#0" expanded="false" />
+            <element signature="docComment;method#getEndDate#0;class#Show#0" expanded="false" />
+            <element signature="method#getEndDate#0;class#Show#0" expanded="false" />
+            <element signature="docComment;method#getTitle#0;class#Show#0" expanded="false" />
+            <element signature="docComment;method#getId#0;class#Show#0" expanded="false" />
+            <element signature="docComment;method#getDate#0;class#Show#0" expanded="false" />
+            <element signature="docComment;method#getPeriod#0;class#Show#0" expanded="false" />
+            <element signature="docComment;method#setPeriod#0;class#Show#0" expanded="false" />
+            <element signature="method#setPeriod#0;class#Show#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Theater.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="12" column="39" lean-forward="false" selection-start-line="12" selection-start-column="39" selection-end-line="12" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/UserInterface.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="673">
+          <caret line="226" column="31" lean-forward="false" selection-start-line="226" selection-start-column="31" selection-end-line="226" selection-end-column="31" />
+          <folding>
+            <element signature="docComment;class#UserInterface#0" expanded="false" />
+            <element signature="docComment;method#UserInterface#0;class#UserInterface#0" expanded="false" />
+            <element signature="method#UserInterface#0;class#UserInterface#0" expanded="false" />
+            <element signature="docComment;method#instance#0;class#UserInterface#0" expanded="false" />
+            <element signature="method#instance#0;class#UserInterface#0" expanded="false" />
+            <element signature="docComment;method#retrieve#0;class#UserInterface#0" expanded="false" />
+            <element signature="method#retrieve#0;class#UserInterface#0" expanded="false" />
+            <element signature="docComment;method#getNumber#0;class#UserInterface#0" expanded="false" />
+            <element signature="method#getNumber#0;class#UserInterface#0" expanded="false" />
+            <element signature="docComment;method#getDate#0;class#UserInterface#0" expanded="false" />
+            <element signature="method#getDate#0;class#UserInterface#0" expanded="false" />
+            <element signature="docComment;method#getCommand#0;class#UserInterface#0" expanded="false" />
+            <element signature="method#getCommand#0;class#UserInterface#0" expanded="false" />
+            <element signature="docComment;method#yesOrNo#0;class#UserInterface#0" expanded="false" />
+            <element signature="method#yesOrNo#0;class#UserInterface#0" expanded="false" />
+            <element signature="docComment;method#getToken#0;class#UserInterface#0" expanded="false" />
+            <element signature="method#getToken#0;class#UserInterface#0" expanded="false" />
+            <element signature="docComment;method#help#0;class#UserInterface#0" expanded="false" />
+            <element signature="method#help#0;class#UserInterface#0" expanded="false" />
+            <element signature="docComment;method#addClient#0;class#UserInterface#0" expanded="false" />
+            <element signature="method#addClient#0;class#UserInterface#0" expanded="false" />
+            <element signature="docComment;method#removeClient#0;class#UserInterface#0" expanded="false" />
+            <element signature="method#removeClient#0;class#UserInterface#0" expanded="false" />
           </folding>
         </state>
       </provider>
