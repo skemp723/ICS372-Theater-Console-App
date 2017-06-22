@@ -1,7 +1,6 @@
 import java.io.Serializable;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.*;
+import java.util.LinkedList;
+import java.util.List;
 
 /**
  * Created by z077391 on 6/20/2017.
@@ -51,6 +50,8 @@ public class Client implements Serializable{
      * @return false iif there is a show
      * */
     public boolean hasShow() {
+
+        /**
         ListIterator iterator = shows.listIterator();
         int i = 0;
         DateFormat dateFormat = SimpleDateFormat.getDateInstance(DateFormat.SHORT);
@@ -64,15 +65,24 @@ public class Client implements Serializable{
             }
         }
         return false;
+         **/
+
+        return(!shows.isEmpty());
+
     }
 
     /**
      * Return string of the Client
      * String contains id, name, address and phone number
-     * */
-    public String toString()
-    {
-        String result = String.format("ClientID: %s , Name: %s , Address: %s , Phone Number: %s",this.id,this.name,this.address,this.phone);
-        return result;
+     */
+    @Override
+    public String toString() {
+        return "Client{" +
+                "name='" + name + '\'' +
+                ", address='" + address + '\'' +
+                ", phone='" + phone + '\'' +
+                ", id='" + id + '\'' +
+                ", shows=" + shows.toString() +
+                '}';
     }
 }

@@ -2,8 +2,10 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.text.DateFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.Iterator;
 import java.util.StringTokenizer;
@@ -57,6 +59,8 @@ public class UserInterface {
                 case REMOVE_CUSTOMER: removeCustomer();
                     break;
                 case LIST_CUSTOMERS: listCustomers();
+                    break;
+                case ADD_SHOW: addShow();
             }
         }
     }
@@ -373,6 +377,49 @@ public class UserInterface {
             }
         }
     }
+
+    /**
+     * Method to be called for adding a show.
+     * Prompts the user for the appropriate values and
+     * uses the appropriate Client method for adding a show.
+     *
+     */
+    public void addShow() {
+        String showTitle = getToken("Enter show/paly title");
+        String clientId = getToken("Enter client id");
+        String showDt  = getToken("Enter show start date in YYYY-MM-DD format");
+        Integer showPeriod = Integer.parseInt(getToken("Enter show period in number of weeks"));
+
+        Date date = null;
+        String pattern = "yyyy-MM-dd";
+        try {
+            date = new SimpleDateFormat(pattern).parse(showDt);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+        Calendar showDate = Calendar.getInstance();
+        showDate.setTime(date);
+
+
+        Show show = new Show(showTitle,showDate,showPeriod);
+        if (show == null) {
+            System.out.println("Could not add show");
+        } else {
+            System.out.println(show.toString());
+        }
+
+        Client client = theater.getClient(clientId);
+        if (client == null) {
+            System.out.println("Specified client doesn't exist");
+        } else {
+            client.addShow(show);
+            System.out.println("Show added for the client");
+            System.out.println(client.toString());
+        }
+
+    }
+
 
 
 }
