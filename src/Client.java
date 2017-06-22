@@ -71,6 +71,10 @@ public class Client implements Serializable{
 
     }
 
+    public List<Show> getShows() {
+        return shows;
+    }
+
     /**
      * Return string of the Client
      * String contains id, name, address and phone number

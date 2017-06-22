@@ -8,6 +8,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.Iterator;
+import java.util.List;
 import java.util.StringTokenizer;
 
 /**
@@ -61,6 +62,8 @@ public class UserInterface {
                 case LIST_CUSTOMERS: listCustomers();
                     break;
                 case ADD_SHOW: addShow();
+                    break;
+                case LIST_SHOWS: listShows();
             }
         }
     }
@@ -420,6 +423,22 @@ public class UserInterface {
 
     }
 
+    /**
+     * Method to be called for listing all shows.
+     **/
+    public void listShows() {
 
+        Iterator itr = theater.getClients();
+        while (itr.hasNext()) {
+            Client client = (Client) itr.next();
+            List<Show> shows = client.getShows();
+            for (Iterator iterator = shows.iterator(); iterator.hasNext(); ) {
+                Show show = (Show) iterator.next();
+                System.out.println(show.toString());
+            }
+        }
+    }
 
 }
+
+
