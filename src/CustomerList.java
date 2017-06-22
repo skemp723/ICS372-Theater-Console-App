@@ -63,8 +63,16 @@ public class CustomerList implements Serializable{
         {
             return false;
         }else{
-            return customers.remove(customer);
+             boolean result = customers.remove(customer);
+             for(int i = 0; i < customer.customerCCListSize(); i++){
+                Iterator ccIterator = customer.iterator();
+                CreditCard  current = (CreditCard) ccIterator.next();
+                CreditCardList.instance().removeCreditCard(current.getCreditCardNumber());
+
+             }
+            return result;
         }
+
     }
 
     /**
