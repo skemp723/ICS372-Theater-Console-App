@@ -2,6 +2,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.Serializable;
+import java.util.Iterator;
 
 /**
  * Created by z077391 on 6/20/2017.
@@ -48,7 +49,7 @@ public class Theater implements Serializable{
      */
     public Client addClient(String name, String address, String phone) {
         Client client = new Client(name, address, phone);
-        if (clientList.insertMember(client)) {
+        if (clientList.insertClient(client)) {
             return (client);
         }
         return null;
@@ -92,5 +93,14 @@ public class Theater implements Serializable{
             return (OPERATION_COMPLETED);
         }
         return (OPERATION_FAILED);
+    }
+
+    /**
+     * Method called to retreive the iterator client list
+     * @return a list iterator of the ClientList
+     * */
+    public Iterator getClients()
+    {
+        return clientList.getClients();
     }
 }

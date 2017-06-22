@@ -5,6 +5,7 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
+import java.util.Iterator;
 import java.util.StringTokenizer;
 
 /**
@@ -28,6 +29,33 @@ public class UserInterface {
     private static final int STORE_DATA = 11;
     private static final int RETRIEVE_DATA = 12;
     private static final int HELP = 13;
+    /**
+     * The method to start the app. Simply calls process()
+     * @param args not used
+     * */
+    public static void main(String[] args)
+    {
+        UserInterface.instance().process();
+    }
+
+    private void process()
+    {
+        int command;
+        help();
+        while((command = getCommand()) != EXIT)
+        {
+            switch(command)
+            {
+                case ADD_CLIENT: addClient();
+                break;
+                case REMOVE_CLIENT: removeClient();
+                break;
+                case LIST_CLIENTS: getClients();
+                break;
+            }
+        }
+    }
+
     /**
      * Made private for singleton pattern.
      * Conditionally looks for any saved data. Otherwise, it gets
@@ -215,7 +243,7 @@ public class UserInterface {
         if (result == null) {
             System.out.println("Could not add member");
         }
-        System.out.println(result);
+        System.out.println(result.toString());
     }
 
     /**
@@ -249,6 +277,24 @@ public class UserInterface {
                 break;
             }
         } while (true);
+    }
+
+    /**
+     * Method called to diaplay all Clients
+     * */
+    public void getClients()
+    {
+        Iterator result = theater.getClients();
+        if(result ==null)
+        {
+            System.out.println("No clients available");
+        }else {
+            while(result.hasNext())
+            {
+                Client client = (Client) result.next();
+                System.out.println(client.toString());
+            }
+        }
     }
 
 }

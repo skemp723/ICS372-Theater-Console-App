@@ -44,7 +44,7 @@ public class ClientList implements Serializable{
      * @param client the member to be inserted
      * @return true iff the member could be inserted. Currently always true
      */
-    public boolean insertMember(Client client) {
+    public boolean insertClient(Client client) {
         clients.add(client);
         return true;
     }
@@ -103,5 +103,10 @@ public class ClientList implements Serializable{
     @Override
     public String toString() {
         return clients.toString();
+    }
+
+    public Iterator getClients()
+    {
+        return clients.iterator();
     }
 }
